@@ -1,0 +1,12 @@
+sku,name,description,price,currency,category_name,stock,image_url,is_active,brand,warranty_months,model_number
+1001,Ноутбук Lenovo IdeaPad 3,"Ноутбук, серия ""IdeaPad""",45990,RUB,Компьютеры,5,,true,Lenovo,24,IdeaPad3-15
+1002,Мышь Logitech M185,Беспроводная мышь,1290,RUB,Периферия,10,,true,Logitech,12,M185
+1003,Клавиатура A4Tech,Клавиатура для компьютера,3490,RUB,Периферия,7,,false,A4Tech,24,V3M
+1004,Монитор Dell,Монитор для компьютера,29990,RUB,Компьютеры,3,,1,Dell,24,S2722QC
+1005,Видеокарта NVIDIA,Дискретная видеокарта,24990,RUB,Компьютеры,4,,true,NVIDIA,36,RTX3060
+1006,SSD Samsung,Твердотельный накопитель,5990.50,RUB,Компьютеры,12,,true,Samsung,60,870EVO-1T
+1007,Веб-камера Logitech,USB веб-камера,4990,RUB,Периферия,6,,true,Logitech,24,C920
+1008,Аудиоинтерфейс Focusrite,Аудиоинтерфейс,15990,RUB,Звук,2,,0,Focusrite,60,Scarlett2i2
+1009,Роутер TP-Link,Wi-Fi роутер,7490,RUB,Сетевое оборудование,8,,true,TP-Link,36,AX55
+1010,Гарнитура HyperX,Гарнитура с микрофоном,3290,RUB,Периферия,15,,true,HyperX,12,CloudStinger
+1011,Блок питания Corsair,,4990,RUB,Компьютеры,9,,true,Corsair,60,CV550

@@ -1,0 +1,16 @@
+@model ImportResult
+<dl class="stats"><div><dt>Обработано строк</dt><dd id="total-rows">@Model.TotalRows</dd></div><div><dt>Добавлено товаров</dt><dd id="imported-count">@Model.ImportedCount</dd></div><div><dt>Сообщений об ошибках</dt><dd id="error-count">@Model.ErrorCount</dd></div></dl>
+@if (Model.ErrorCount == 0)
+{
+    <p class="success-text">Корректные товары добавлены в каталог.</p>
+}
+else
+{
+    <p class="hint">Ошибочные строки и дубликаты пропущены. Одна строка может дать несколько сообщений. «Файл» означает проблему файла в целом.</p>
+    <div class="table-scroll"><table class="errors"><thead><tr><th scope="col">Строка</th><th scope="col">Описание ошибки</th></tr></thead><tbody>
+    @foreach (var error in Model.Errors)
+    {
+        <tr><td>@(error.RowNumber == 0 ? "Файл" : error.RowNumber.ToString())</td><td>@error.Message</td></tr>
+    }
+    </tbody></table></div>
+}

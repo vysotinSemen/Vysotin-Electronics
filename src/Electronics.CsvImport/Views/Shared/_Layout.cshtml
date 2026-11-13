@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] — Электроника</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <a class="skip-link" href="#content">К содержимому</a>
+    <header class="site-header"><div class="header-inner">
+        <a class="brand" asp-controller="Products" asp-action="Index">CSV-КАТАЛОГ</a>
+        <nav aria-label="Основная навигация">
+            <a class="@(ViewData["Page"] as string == "catalog" ? "selected" : "")" asp-controller="Products" asp-action="Index">Каталог товаров</a>
+            <a class="@(ViewData["Page"] as string == "import" ? "selected" : "")" asp-controller="Products" asp-action="Import">Импорт CSV</a>
+        </nav>
+    </div></header>
+    <main id="content" class="container">
+        @RenderBody()
+    </main>
+</body>
+</html>

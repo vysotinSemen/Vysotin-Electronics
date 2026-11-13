@@ -1,0 +1,2 @@
+sku,name,description,price,currency,category_name,stock,image_url,is_active,brand,warranty_months,model_number
+TEST-001,Ноутбук Lenovo IdeaPad 3,"Ноутбук, серия ""IdeaPad""",45990,RUB,Компьютеры,5,,true,,24,IdeaPad3-15

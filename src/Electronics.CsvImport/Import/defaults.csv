@@ -1,0 +1,2 @@
+sku,name,description,price,currency,category_name,stock,image_url,is_active,brand,warranty_months,model_number
+DEFAULT-01,Товар по умолчанию,,100.50,,,0,,true,Demo,0,

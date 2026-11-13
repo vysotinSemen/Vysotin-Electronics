@@ -1,0 +1,27 @@
+@model ImportViewModel
+@{ ViewData["Title"] = "Импорт товаров"; ViewData["Page"] = "import"; }
+<div class="page-heading"><h1>Импорт товаров</h1></div>
+<div class="import-grid">
+    <section class="panel"><h2>Источник данных</h2>
+        <form asp-controller="Products" asp-action="Import" method="post">
+            <label for="filePath">Путь к CSV-файлу</label>
+            <input id="filePath" name="filePath" type="text" value="@Model.FilePath" spellcheck="false" aria-describedby="path-help" />
+            <p id="path-help" class="hint">Укажите путь к файлу: например, <code>Import/manual_valid.csv</code> или <code>C:\data\products.csv</code>.</p>
+            <div class="actions"><button type="submit">Импортировать товары</button><a class="text-link" asp-action="Index">Открыть каталог →</a></div>
+        </form>
+    </section>
+    <aside class="panel guidance"><h2>Формат CSV</h2><ul>
+        <li>UTF-8 с BOM или без него, разделитель — запятая.</li>
+        <li>Дробный разделитель — точка: <code>1490.50</code>.</li>
+        <li>Обязательны все 12 колонок схемы.</li>
+        <li>Бренд обязателен, гарантия — от 0 до 60 месяцев.</li>
+        <li>Дубликаты SKU пропускаются, первый товар сохраняется.</li>
+    </ul></aside>
+</div>
+@if (Model.Result is { } result)
+{
+    <section class="panel result" aria-live="polite"><div class="section-heading"><h2>Результат ручного импорта</h2><span class="label @(result.ErrorCount == 0 ? "success" : "warning")">@(result.ErrorCount == 0 ? "Без ошибок" : "Есть сообщения")</span></div>
+        <partial name="_ImportResult" model="result" />
+        <a class="text-link" asp-action="Index">Перейти в каталог товаров →</a>
+    </section>
+}

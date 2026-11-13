@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Electronics.CsvImport": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5208",
+      "environmentVariables": { "ASPNETCORE_ENVIRONMENT": "Development" }
+    }
+  }
+}

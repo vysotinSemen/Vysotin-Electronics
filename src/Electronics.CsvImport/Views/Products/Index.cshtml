@@ -1,0 +1,28 @@
+@model CatalogViewModel
+@{ ViewData["Title"] = "Каталог товаров"; ViewData["Page"] = "catalog"; }
+<div class="page-heading"><h1>Каталог товаров</h1><a class="button" asp-action="Import">Импортировать CSV</a></div>
+<section class="panel startup" aria-labelledby="startup-heading">
+    <div class="section-heading"><h2 id="startup-heading">Импорт при запуске</h2><span class="label @(Model.Startup.Result.ErrorCount == 0 ? "success" : "warning")">@(Model.Startup.Result.ErrorCount == 0 ? "Успешно" : "Проверьте файл")</span></div>
+    <p class="hint">Файл: <code id="startup-path">@Model.Startup.FilePath</code></p>
+    <partial name="_ImportResult" model="Model.Startup.Result" />
+</section>
+<div class="catalog-summary"><strong>Всего товаров: <span id="catalog-count">@Model.Products.Count</span></strong></div>
+@if (Model.Products.Count == 0)
+{
+    <section class="panel empty"><h2>Каталог пока пуст</h2><p>Укажите корректный CSV-файл на странице импорта.</p><a class="text-link" asp-action="Import">Открыть импорт →</a></section>
+}
+else
+{
+    <div class="table-scroll catalog-panel"><table class="catalog"><caption class="visually-hidden">Каталог товаров</caption><thead><tr><th scope="col">Артикул</th><th scope="col">Товар и описание</th><th scope="col">Бренд</th><th scope="col">Гарантия</th><th scope="col">Цена</th><th scope="col">Количество</th><th scope="col">Активность</th></tr></thead><tbody>
+    @foreach (var product in Model.Products)
+    {
+        <tr><td><code>@product.Sku</code></td>
+            <td class="product-name"><strong>@product.Name</strong><p>@(product.Description.Length == 0 ? "Без описания" : product.Description)</p><small>Категория: @product.CategoryName</small><small>Модель: @(product.ModelNumber.Length == 0 ? "не указана" : product.ModelNumber)</small><small class="image-placeholder">Изображение не задано</small></td>
+            <td>@product.Brand</td><td>@product.WarrantyMonths мес.</td>
+            <td class="nowrap"><strong>@product.Price.ToString("N2")</strong><small>@product.Currency</small></td>
+            <td>@product.StockQuantity<small>шт.</small></td>
+            <td><span class="status @(product.IsActive ? "on" : "off")">@(product.IsActive ? "Активен" : "Неактивен")</span></td>
+        </tr>
+    }
+    </tbody></table></div>
+}
