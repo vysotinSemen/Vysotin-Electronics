@@ -4,8 +4,21 @@
 
 ## Запуск в Visual Studio
 
-1. Установить .NET SDK 10.0.403 или совместимый SDK .NET 10 и Visual Studio с компонентом «ASP.NET и разработка веб-приложений».
-2. Открыть `Electronics.CsvImport.sln` и дождаться восстановления пакетов NuGet.
-3. Назначить `Electronics.CsvImport` запускаемым проектом и запустить его клавишей F5.
+1. На странице GitHub выбрать **Code → Download ZIP**. Щёлкнуть по скачанному архиву правой кнопкой и выбрать **Извлечь всё**. Сначала распаковать архив целиком: рядом с решением должны находиться папки `src`, `tests`, `docs` и файл `Directory.Build.props`.
+2. Установить .NET SDK 10.0.403 или совместимый SDK .NET 10 и Visual Studio с поддержкой .NET 10 и компонентом «ASP.NET и разработка веб-приложений».
+3. Открыть `Electronics.CsvImport.sln` из распакованной папки и дождаться восстановления пакетов NuGet. Открытие одного файла `.sln` внутри ZIP приводит к сообщению «проект не найден».
+4. Назначить `Electronics.CsvImport` запускаемым проектом и запустить его клавишей F5. Каталог открывается по адресу `http://localhost:5208`.
 
 Для запуска тестов: открыть проводник тестов Visual Studio или выполнить `dotnet test` в папке решения.
+
+## Запуск из терминала
+
+В папке с файлом решения выполнить:
+
+```text
+dotnet restore
+dotnet test
+dotnet run --project src/Electronics.CsvImport/Electronics.CsvImport.csproj
+```
+
+Исходные CSV находятся в `src/Electronics.CsvImport/Import`. Файл `docs/fixture_expectations.json` содержит ожидаемые результаты для тестовых CSV и входит в комплект проекта.

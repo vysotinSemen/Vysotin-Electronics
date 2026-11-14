@@ -1,0 +1,92 @@
+{
+  "sample_products.csv": [
+    11,
+    11,
+    0
+  ],
+  "valid_electronics.csv": [
+    2,
+    2,
+    0
+  ],
+  "manual_valid.csv": [
+    2,
+    2,
+    0
+  ],
+  "utf8_bom.csv": [
+    2,
+    2,
+    0
+  ],
+  "invalid_price.csv": [
+    1,
+    0,
+    1
+  ],
+  "invalid_stock.csv": [
+    1,
+    0,
+    1
+  ],
+  "bad_active.csv": [
+    1,
+    0,
+    1
+  ],
+  "missing_brand.csv": [
+    1,
+    0,
+    1
+  ],
+  "warranty_out_of_range.csv": [
+    1,
+    0,
+    1
+  ],
+  "warranty_negative.csv": [
+    1,
+    0,
+    1
+  ],
+  "duplicate_sku.csv": [
+    2,
+    1,
+    1
+  ],
+  "multiple_errors.csv": [
+    1,
+    0,
+    7
+  ],
+  "defaults.csv": [
+    1,
+    1,
+    0
+  ],
+  "header_only.csv": [
+    0,
+    0,
+    1
+  ],
+  "invalid_header.csv": [
+    0,
+    0,
+    1
+  ],
+  "wrong_fields.csv": [
+    1,
+    0,
+    1
+  ],
+  "empty_file.csv": [
+    0,
+    0,
+    1
+  ],
+  "malformed_quotes.csv": [
+    1,
+    0,
+    1
+  ]
+}
